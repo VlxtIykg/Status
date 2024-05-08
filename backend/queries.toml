@@ -1,0 +1,29 @@
+[user_manipulation]
+addToUsers = 'INSERT INTO users VALUES(?, ?)'
+
+[user_extrapolation]
+getFromUsers = 'select * from users'
+
+[table_creation]
+alt = '''
+CREATE TABLE IF NOT EXISTS b22caeb2c8d2a909abd0335c1d367876bff30707dbbf8d36bc749eebb7ae8a20 (
+  roblox_alt TEXT NOT NULL,
+  PRIMARY KEY(roblox_alt)
+)
+'''
+
+current = '''
+CREATE TABLE IF NOT EXISTS users (
+  discord_id TEXT NOT NULL,
+  discord_name TEXT,
+  PRIMARY KEY(discord_id)
+)
+'''
+
+[specific_table_creation]
+alt = '''
+CREATE TABLE IF NOT EXISTS $PARAM1 (
+  roblox_alt TEXT NOT NULL,
+  PRIMARY KEY(roblox_alt)
+)
+'''
